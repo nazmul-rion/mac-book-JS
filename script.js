@@ -22,6 +22,7 @@ function applyCoupon() {
     else {
         finalPriceField.innerText = totalPriceField.innerText;
     }
+    pomoInputField.value = '';
 }
 
 // Update Memory Price
