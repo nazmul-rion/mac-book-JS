@@ -40,21 +40,32 @@
 
                         <div class="memory-selection pb-4">
                             <p class="fw-bold mb-0">Memory</p>
-                            <button id="ram-selection-btn-8gb" class="btn btn-dark">8GB unified memory</button>
-                            <button id="ram-selection-btn-16gb" class="btn btn-dark">16GB unified memory</button>
+                            <button id="ram-selection-btn-8gb" class="btn btn-outline-dark"
+                                onclick="updateMemoryPrice('ram-selection-btn-8gb')">8GB unified memory</button>
+                            <button id="ram-selection-btn-16gb" class="btn btn-outline-dark"
+                                onclick="updateMemoryPrice('ram-selection-btn-16gb')">16GB unified memory</button>
                         </div>
 
                         <div class="storage-selection pb-4">
                             <p class="fw-bold mb-0">Storage</p>
-                            <button id="storage-selection-btn-256gb" class="btn btn-dark">256GB SSD storage</button>
-                            <button id="storage-selection-btn-512gb" class="btn btn-dark">512GB SSD storage</button>
-                            <button id="storage-selection-btn-1tb" class="btn btn-dark">1TB SSD storage</button>
+                            <button id="storage-selection-btn-256gb" class="btn btn-outline-dark"
+                                onclick="updateStoragePrice('storage-selection-256gb')">256GB SSD
+                                storage</button>
+                            <button id="storage-selection-btn-512gb" class="btn btn-outline-dark"
+                                onclick="updateStoragePrice('storage-selection-512gb')">512GB SSD
+                                storage</button>
+                            <button id="storage-selection-btn-1tb" class="btn btn-outline-dark"
+                                onclick="updateStoragePrice('storage-selection-1tb')">1TB SSD storage</button>
                         </div>
 
                         <div class="delivery-selection pb-4">
                             <p class="fw-bold mb-0">Choose your delivery option</p>
-                            <button id="free-del-btn" class="btn btn-dark">Friday, Aug 25 Free prime Delivery</button>
-                            <button id="fast-del-btn" class="btn btn-dark">Friday, Aug 21 Delivery charge $20</button>
+                            <button id="free-del-btn" class="btn btn-outline-dark"
+                                onclick="updateDeliveryPrice('free')">Friday, Aug 25 Free prime
+                                Delivery</button>
+                            <button id="fast-del-btn" class="btn btn-outline-dark"
+                                onclick="updateDeliveryPrice('paid')">Friday, Aug 21 Delivery charge
+                                $20</button>
                         </div>
 
                         <div class="prices col-6">
@@ -71,14 +82,16 @@
                                     <td class="table-light">Extra Storage Cost</td>
                                     <td class="table-light">$ <span id="storage-price">0</span></td>
                                 </tr>
-                                <tr class="table-light">
+                                <tr class="table-light ">
                                     <td class="table-light">Delivery Charge</td>
                                     <td class="table-light">$ <span id="delivery-charge">0</span></td>
                                 </tr>
-                                <tr class="table-light">
-                                    <td class="table-light">Total Price</td>
-                                    <td class="table-light">$ <span id="total-price">1299</span></td>
-                                </tr>
+                                <tfoot>
+                                    <tr class="table-light">
+                                        <td class="table-light">Total Price</td>
+                                        <td class="table-light">$ <span id="total-price">1299</span></td>
+                                    </tr>
+                                </tfoot>
                             </table>
 
                             <p class="mb-0">Add Pomo Code</p>

@@ -1,29 +1,64 @@
-const ramPriceBtn = document.getElementById('ram-price');
-const storagePriceBtn = document.getElementById('storage-price');
-const delChargeBtn = document.getElementById('delivery-charge');
-const totalPriceBtn = document.getElementById('total-price');
-const pomoInputBtn = document.getElementById('pomo-input');
-const finalPriceBtn = document.getElementById('final-price');
+const ramPriceField = document.getElementById('ram-price');
+const storagePriceField = document.getElementById('storage-price');
+const delChargeField = document.getElementById('delivery-charge');
+const totalPriceField = document.getElementById('total-price');
+const pomoInputField = document.getElementById('pomo-input');
+const finalPriceField = document.getElementById('final-price');
 
 // Update Memory Price
+function updateMemoryPrice(memory) {
+    if (memory == 'ram-selection-btn-8gb') {
+        ramPriceField.innerText = 0;
+    }
+    else {
+        ramPriceField.innerText = 180;
+    }
+    updateTotalPrice();
+    applyCoupon();
+}
 
+// Update Storage Price
+function updateStoragePrice(storage) {
+    if (storage == 'storage-selection-256gb') {
+        storagePriceField.innerText = 0;
+    }
+    else if (storage == 'storage-selection-512gb') {
+        storagePriceField.innerText = 100;
+    }
+    else {
+        storagePriceField.innerText = 180;
+    }
+    updateTotalPrice();
+    applyCoupon();
+}
 
+// Update Delivery Price
+function updateDeliveryPrice(delivery) {
+    if (delivery == 'free') {
+        delChargeField.innerText = 0;
+    }
+    else {
+        delChargeField.innerText = 20;
+    }
+    updateTotalPrice();
+    applyCoupon();
+}
 
 // Update Total Price
 function updateTotalPrice() {
-    let total = 1299 + parseFloat(ramPriceBtn.innerText) + parseFloat(storagePriceBtn.innerText) + parseFloat(delChargeBtn.innerText);
-    totalPriceBtn.innerText = total;
+    let total = 1299 + parseFloat(ramPriceField.innerText) + parseFloat(storagePriceField.innerText) + parseFloat(delChargeField.innerText);
+    totalPriceField.innerText = total;
 }
 
 // Apply Coupon
 function applyCoupon() {
-    if (pomoInputBtn.value == 'stevekaku') {
-        let totalPrice = parseFloat(totalPriceBtn.innerText);
+    if (pomoInputField.value == 'stevekaku') {
+        let totalPrice = parseFloat(totalPriceField.innerText);
         let discount = totalPrice * 0.2;
         let finalPrice = totalPrice - discount;
-        finalPriceBtn.innerText = finalPrice.toFixed(2);
+        finalPriceField.innerText = finalPrice.toFixed(2);
     }
     else {
-        finalPriceBtn.innerText = totalPriceBtn.innerText;
+        finalPriceField.innerText = totalPriceField.innerText;
     }
 }
