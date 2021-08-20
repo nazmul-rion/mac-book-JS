@@ -40,51 +40,52 @@
 
                         <div class="memory-selection pb-4">
                             <p class="fw-bold mb-0">Memory</p>
-                            <button class="btn btn-dark">8gb unified memory</button>
-                            <button class="btn btn-dark">16gb unified memory</button>
+                            <button id="ram-selection-btn-8gb" class="btn btn-dark">8GB unified memory</button>
+                            <button id="ram-selection-btn-16gb" class="btn btn-dark">16GB unified memory</button>
                         </div>
 
                         <div class="storage-selection pb-4">
                             <p class="fw-bold mb-0">Storage</p>
-                            <button class="btn btn-dark">256gb SSD storage</button>
-                            <button class="btn btn-dark">512gb SSD storage</button>
-                            <button class="btn btn-dark">1tb SSD storage</button>
+                            <button id="storage-selection-btn-256gb" class="btn btn-dark">256GB SSD storage</button>
+                            <button id="storage-selection-btn-512gb" class="btn btn-dark">512GB SSD storage</button>
+                            <button id="storage-selection-btn-1tb" class="btn btn-dark">1TB SSD storage</button>
                         </div>
 
                         <div class="delivery-selection pb-4">
                             <p class="fw-bold mb-0">Choose your delivery option</p>
-                            <button class="btn btn-dark">Friday, Aug 25 Free prime Delivery</button>
-                            <button class="btn btn-dark">Friday, Aug 21 Delivery charge $20</button>
+                            <button id="free-del-btn" class="btn btn-dark">Friday, Aug 25 Free prime Delivery</button>
+                            <button id="fast-del-btn" class="btn btn-dark">Friday, Aug 21 Delivery charge $20</button>
                         </div>
 
                         <div class="prices col-6">
                             <table class="table-light table fw-bold">
                                 <tr class="table-light">
                                     <td class="table-light">Best Price</td>
-                                    <td class="table-light">$ <span>1299</span></td>
+                                    <td class="table-light">$ <span id="best-price">1299</span></td>
                                 </tr>
                                 <tr class="table-light">
                                     <td class="table-light">Extra Memory Cost</td>
-                                    <td class="table-light">$ <span>0</span></td>
+                                    <td class="table-light">$ <span id="ram-price">0</span></td>
                                 </tr>
                                 <tr class="table-light">
                                     <td class="table-light">Extra Storage Cost</td>
-                                    <td class="table-light">$ <span>0</span></td>
+                                    <td class="table-light">$ <span id="storage-price">0</span></td>
                                 </tr>
                                 <tr class="table-light">
                                     <td class="table-light">Delivery Charge</td>
-                                    <td class="table-light">$ <span>0</span></td>
+                                    <td class="table-light">$ <span id="delivery-charge">0</span></td>
                                 </tr>
                                 <tr class="table-light">
                                     <td class="table-light">Total Price</td>
-                                    <td class="table-light">$ <span>1299</span></td>
+                                    <td class="table-light">$ <span id="total-price">1299</span></td>
                                 </tr>
                             </table>
 
                             <p class="mb-0">Add Pomo Code</p>
                             <div class="input-group">
-                                <input class="form-control" type="text">
-                                <button class="btn btn-danger">Apply</button>
+                                <input id="pomo-input" class="form-control" type="text">
+                                <button id="apply-pomo-btn" class="btn btn-danger"
+                                    onclick="applyCoupon()">Apply</button>
                             </div>
                         </div>
                     </section>
@@ -95,7 +96,7 @@
 
         <!-- Final Price -->
         <section class="final-price container">
-            <h2 class="text-center">Total: $<span>1299</span> </h2>
+            <h2 class="text-center">Total: $<span id="final-price">1299</span> </h2>
         </section>
 
     </main>
